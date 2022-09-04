@@ -2,3 +2,4 @@ __*
 .ipynb_checkpoints
 data/preprocessed/
 data/test
+output_lorentz
