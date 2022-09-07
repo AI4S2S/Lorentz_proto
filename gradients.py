@@ -22,7 +22,7 @@ def wiggle(da, dim, n):
         max_degrees = 180
         new_coords = np.mod(n + da.coords[dim] + 90, max_degrees) - 90
         da = da.assign_coords({dim: new_coords}).sortby(dim)
-        return da.isel(lat=slice(abs(n), -abs(n)))
+        return da.isel({dim: slice(abs(n), -abs(n)}))
     else:
         err_msg = (
             'I can only wiggle along {:} or {:} and the respective'
