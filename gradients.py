@@ -14,9 +14,13 @@ def wiggle(da, dim, n):
 
     if dim.lower() in VALID_LONS_NAMES:
         # Wrap along longitude
+        if (da.coords[dim] < 0).any():
+            raise ValueError('Zut! Please ensure that longitude ranges between 0 and 360 degrees.')
         max_degrees = 360
         new_coords = np.mod(n + da.coords[dim], max_degrees)
-        return da.assign_coords({dim: new_coords}).sortby(dim)
+        da = da.assign_coords({dim: new_coords}).sortby(dim)
+
+        return da
     elif dim.lower() in VALID_LAT_NAMES:
         # Wrap along latitude
         max_degrees = 180
