@@ -2,7 +2,6 @@ name: RGCPD
 channels:
   - conda-forge
 
-
 dependencies:
   - cartopy
   - cftime
@@ -22,12 +21,10 @@ dependencies:
   - pandas
   - pip
   - python>=3.8, <3.9
-#  - pytest # <- optional for pytesting
   - scikit-learn
   - scipy
   - seaborn
   - shapely
-#  - spyder # <- optional Spyder IDE
   - statsmodels
   - pytables
   - xarray
@@ -37,7 +34,7 @@ dependencies:
 #  - xesmf # <- optional packages for regridding
   - pip:
     - tigramite
-prefix: /Users/semvijverberg/miniconda3/envs/RGCPD
+
 # If mamba has not been installed in your conda base environment, then please run:
 # conda install mamba -n base -c conda-forge
 # mamba env create -f environment.yml
