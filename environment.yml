@@ -36,8 +36,8 @@ dependencies:
 #  - esmf # <- optional packages for regridding
 #  - xesmf # <- optional packages for regridding
   - pip:
-    - tigramite
-prefix: /Users/semvijverberg/miniconda3/envs/RGCPD
+    - tigramitei
+prefix: /opt/miniconda3/envs/RGCPDsudo du /home/* -shc^C
 # If mamba has not been installed in your conda base environment, then please run:
 # conda install mamba -n base -c conda-forge
 # mamba env create -f environment.yml
