@@ -6,7 +6,6 @@ http://onnx.ai/sklearn-onnx/api_summary.html
 """
 
 import numpy as np
-from pathlib import Path
 from skl2onnx import to_onnx
 
 # save scores
