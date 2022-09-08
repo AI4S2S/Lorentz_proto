@@ -3,3 +3,6 @@ __*
 data/preprocessed/
 data/test
 output_lorentz
+
+# Personal test file by Niclas
+test_niclas.py
