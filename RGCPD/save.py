@@ -2,11 +2,11 @@
 # -*- coding: utf-8 -*-
 """
 Functions to save forecast outputs i.e. scores and ML models
-http://onnx.ai/sklearn-onnx/api_summary.html
+https://medium.com/analytics-vidhya/save-and-load-your-scikit-learn-models-in-a-minute-21c91a961e9b
 """
 
 import numpy as np
-from skl2onnx import to_onnx
+import pickle
 
 # save scores
 def save_scores(df_file_name, df):
@@ -14,10 +14,7 @@ def save_scores(df_file_name, df):
     print(f"Data is saved in {df_file_name}")
 
 # save ML model
-def save_model(onnx_model_filename, sklearn_model):
-    X = sklearn_model.X_pred[:1].to_numpy().astype(np.float32)
-    onnx_model = to_onnx(sklearn_model, X)
-    with open(onnx_model_filename, "wb") as f:
-        f.write(onnx_model.SerializeToString())
-    print(f"Model is saved in onxx format in {onnx_model_filename}")
+def save_model(pkl_model_filename, sklearn_model):
+    pickle.dump(sklearn_model, open(pkl_model_filename, 'wb'))
+    print(f"Model is saved in onxx format in {pkl_model_filename}")
 
