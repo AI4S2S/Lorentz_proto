@@ -323,7 +323,7 @@ def get_selbox(ds, selbox, verbosity=0):
 def detrend_anom_ncdf3D(infile, outfile, loadleap=False,
                         seldates=None, selbox=None, format_lon='east_west',
                         auto_detect_mask=False, detrend=True, anomaly=True,
-                        apply_fft=True, n_harmonics=6, encoding={}):
+                        apply_fft=True, n_harmonics=6, encoding={}, dailytomonths=False):
     '''
     Function for preprocessing
     - Calculate anomalies (removing seasonal cycle); requires full years of data.
@@ -337,7 +337,7 @@ def detrend_anom_ncdf3D(infile, outfile, loadleap=False,
     #%%
     ds = import_ds_lazy(infile, loadleap=loadleap,
                         seldates=seldates, selbox=selbox, format_lon=format_lon,
-                        auto_detect_mask=auto_detect_mask)
+                        auto_detect_mask=auto_detect_mask, dailytomonths=dailytomonths)
 
     # check if 3D data (lat, lat, lev) or 2D
     check_dim_level = any([level in ds.dims for level in ['lev', 'level']])
